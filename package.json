@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Share your drink recipes and review others!",
   "main": "index.js",
+  "homepage": "http://EskildVeren.github.io/drinksDB",
   "scripts": {
     "install": "cd app && npm install & cd server && npm install",
     "start": "npm run app:start & npm run server:start",
@@ -12,7 +13,9 @@
     "app:start": "cd app && npm run build && npm run preview",
     "app:test": "cd app && npm run test",
     "server:dev": "cd server && npm run dev",
-    "server:start": "cd server && npm start"
+    "server:start": "cd server && npm start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "repository": {
     "type": "git",
