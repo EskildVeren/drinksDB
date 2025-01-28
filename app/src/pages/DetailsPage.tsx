@@ -23,20 +23,46 @@ export default function DetailsPage() {
 const generateReviews: () => ReviewShape[] = () => {
   return [
     {
-      id: 0,
-      rating: 4,
-      textContent: "My current favourite drink",
-    },
-    {
-      id: 1,
-      rating: 2,
-      textContent: "Could use some more lime",
-    },
-    {
-      id: 2,
-      rating: 5,
       textContent:
-        "Mojitoen gir et forfriskende hint av mynte og lime, perfekt balansert med et snev av sødme og en boblende friskhet. Blandingen av fersk mynte og syrlig lime skaper en skarp og oppkvikkende drink. Det er en tidløs klassiker, ideell for solrike ettermiddager eller livlige sammenkomster. Helt herlig!",
+        "This drink is pure bliss in a glass. It’s like sipping on a tropical sunset!",
+      rating: 5,
+      id: 1,
+    },
+    {
+      textContent:
+        "The perfect balance of sweet and tangy—like a little vacation for your taste buds.",
+      rating: 5,
+      id: 2,
+    },
+    {
+      textContent:
+        "Smooth and refreshing, with just the right amount of fizz. A solid go-to for any occasion.",
+      rating: 4,
+      id: 3,
+    },
+    {
+      textContent:
+        "Really enjoyable! The flavors pop like a well-timed toast at a party.",
+      rating: 4,
+      id: 4,
+    },
+    {
+      textContent:
+        "A delightful sip, though I wish the finish was a bit more exciting. Still a crowd-pleaser!",
+      rating: 4,
+      id: 5,
+    },
+    {
+      textContent:
+        "Absolutely sensational! Every sip feels like a celebration of flavor.",
+      rating: 5,
+      id: 6,
+    },
+    {
+      textContent:
+        "It’s like the drink knew exactly what my soul needed—crisp, cool, and completely satisfying.",
+      rating: 5,
+      id: 7,
     },
   ];
 };
