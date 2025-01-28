@@ -170,7 +170,7 @@ export const generateDrinks: () => DBDrink[] = () => {
         "Whisk matcha powder with hot water until smooth. Add the mixture to a cup and top with steamed milk. Sweeten to taste with honey or sugar.",
       alcoholic: false,
       imageUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGWtPrzyApvXV1So996Ps47hPNNVWepasLVQ&s",
+        "https://cookeatlivelove.com/wp-content/uploads/2023/01/matcha-chai-latte-recipe.jpg",
       glass: "Coffee mug",
       measures: [
         { measure: "1 tsp", ingredient: { name: "Matcha powder" } },
@@ -283,7 +283,7 @@ export const generateDrinks: () => DBDrink[] = () => {
         "Blend mango, yogurt, milk, and honey until smooth. Pour into a glass and serve chilled.",
       alcoholic: false,
       imageUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHAjjUXRuq3pcPKkZrXtC3WHL1EL7jNX0LzQ&s",
+        "https://cdn.loveandlemons.com/wp-content/uploads/2023/05/mango-smoothie.jpg",
       glass: "Tall glass",
       measures: [
         { measure: "1 cup", ingredient: { name: "Fresh mango" } },
