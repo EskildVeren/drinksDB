@@ -35,7 +35,7 @@ describe("DrinkDetails Component", () => {
   beforeEach(() => {
     cy.mount(
       <MemoryRouter>
-        <ResultList results={[drinkData1, drinkData2]} />
+        <ResultList />
       </MemoryRouter>,
     );
   });

@@ -1,14 +1,11 @@
 import { DBDrink } from "@/lib/utils";
 import { Link } from "react-router-dom";
 
-interface Result {
-  results: DBDrink[];
-}
-
-export function ResultList(props: Result) {
+export function ResultList() {
+  const newProps = generateDrinks();
   return (
     <nav data-cy="result-list" className="flex flex-wrap justify-center gap-5">
-      {props.results.map((item) => (
+      {newProps.map((item) => (
         <ResultListItem
           key={item.id}
           className="w-full max-w-full sm:w-1/4"
@@ -42,3 +39,25 @@ export function ResultListItem({
     </Link>
   );
 }
+
+export const generateDrinks = () => {
+  return [
+    {
+      id: 0,
+      name: "Mojito",
+      instructions: "bland",
+      alcoholic: true,
+      imageUrl:
+        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTcu33Pfd3jIs2GmlYn0AJIuoQzRt0vHiInPAUnOwG3HCMyns7-zom9N8ACdoqWVxdNDbSMBpJ2H8eeT_4FsbOQxr3VNBr908bD2O-suA",
+      glass: "highball",
+      measures: [
+        {
+          measure: "1tsp",
+          ingredient: {
+            name: "mint",
+          },
+        },
+      ],
+    },
+  ];
+};

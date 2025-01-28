@@ -4,8 +4,7 @@ import { Checkbox } from "@/components/ui/Checkbox";
 import { Input } from "@/components/ui/Input";
 import { Label } from "@/components/ui/Label";
 import { RadioGroup, RadioGroupItem } from "@/components/ui/RadioGroup";
-import { SEARCH_DRINKS_BY_NAME } from "@/lib/queries";
-import { makeVar, useQuery, useReactiveVar } from "@apollo/client";
+import { makeVar, useReactiveVar } from "@apollo/client";
 
 const inputVar = makeVar("");
 const optionsVar = makeVar({
@@ -16,21 +15,6 @@ const optionsVar = makeVar({
 export default function SearchPage() {
   const inputValue = useReactiveVar(inputVar);
   const optionsValue = useReactiveVar(optionsVar);
-  const { loading, error, data, fetchMore, refetch } = useQuery(
-    SEARCH_DRINKS_BY_NAME,
-    {
-      variables: {
-        name: inputVar(),
-        options: optionsVar(),
-        offset: 0,
-        limit: 12,
-      },
-    },
-  );
-
-  const handleSearch = () => {
-    refetch();
-  };
 
   const handleCheckbox = () => {
     optionsVar({
@@ -44,7 +28,6 @@ export default function SearchPage() {
       <form
         onSubmit={(event) => {
           event.preventDefault();
-          handleSearch();
         }}
         role="search"
         className="flex w-8/12 flex-col items-center gap-4 "
@@ -81,7 +64,6 @@ export default function SearchPage() {
                   alcohol: optionsVar().alcohol,
                 });
                 // wait for optionsVar to update before refetching
-                handleSearch();
               }}
               defaultValue={optionsValue.sort}
               className="flex flex-col"
@@ -119,7 +101,6 @@ export default function SearchPage() {
                 onCheckedChange={async () => {
                   await handleCheckbox();
                   // wait for optionsVar to update before refetching
-                  handleSearch();
                 }}
                 id="non-alcoholic"
                 aria-labelledby="non-alcoholic_label"
@@ -136,34 +117,9 @@ export default function SearchPage() {
         </div>
       </form>
 
-      {loading && <p>Loading...</p>}
-      {error && <p>Error : {error.message}</p>}
-      {data && data.searchDrinksByName.length !== 0 ? (
-        <>
-          <ResultList results={data.searchDrinksByName} />
-          {data.searchDrinksByName.length % 12 === 0 ? (
-            // if the number of results is a multiple of 12, there are more results to load
-            // temporary solution
-            <Button
-              className="min-w-min"
-              data-cy="load-more"
-              onClick={() => {
-                fetchMore({
-                  variables: {
-                    offset: data.searchDrinksByName.length,
-                  },
-                });
-              }}
-            >
-              Load more drinks
-            </Button>
-          ) : (
-            <p>No more results to load</p>
-          )}
-        </>
-      ) : (
-        <p>No results</p>
-      )}
+      <>
+        <ResultList />
+      </>
     </main>
   );
 }
