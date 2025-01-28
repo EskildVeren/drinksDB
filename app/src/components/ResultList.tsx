@@ -186,7 +186,7 @@ export const generateDrinks: () => DBDrink[] = () => {
         "Heat milk in a saucepan. Stir in cocoa powder and sugar until dissolved. Pour into a mug and top with whipped cream and chocolate shavings.",
       alcoholic: false,
       imageUrl:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc37MgceJp3MrSmQLdyfH_851hNadhY-eirQ&s",
+        "https://40204166.fs1.hubspotusercontent-na1.net/hub/40204166/hubfs/New%20Recipe%20images/Perfect%20Hot%20Cocoa.jpg?width=526&height=430&name=Perfect%20Hot%20Cocoa.jpg",
       glass: "Coffee mug",
       measures: [
         { measure: "1 cup", ingredient: { name: "Milk" } },
@@ -266,7 +266,7 @@ export const generateDrinks: () => DBDrink[] = () => {
         "In a glass, muddle mint leaves with sugar. Add lemon juice and fill the glass with water and ice. Stir well.",
       alcoholic: false,
       imageUrl:
-        "https://assets.wsimgs.com/wsimgs/ab/images/dp/recipe/202420/0041/img9l.jpg",
+        "https://dirtanddough.com/wp-content/uploads/2023/04/mint-lemonade-featured-image.jpg",
       glass: "Tall glass",
       measures: [
         { measure: "6 leaves", ingredient: { name: "Mint" } },
